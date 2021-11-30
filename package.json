@@ -17,7 +17,9 @@
     "react-native": "0.64.2",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-modal": "^13.0.0",
-    "react-native-web": "0.17.1"
+    "react-native-panel": "^1.0.4",
+    "react-native-web": "0.17.1",
+    "rn-swipeable-panel": "^1.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

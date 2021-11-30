@@ -5,7 +5,7 @@ export default function TopBar() {
     return (
         <View style={styles.container}>
             <FontAwesome5 name="fire" size={27} color="#F06795" />
-            <Text style={[styles.textRow, styles.textPrimary, styles.textShadow]}>Movie Information</Text>
+            <Text style={[styles.textRow, {right: 30}]}>Movie Tinder</Text>
         </View>
     );
 }

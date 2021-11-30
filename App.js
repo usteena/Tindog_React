@@ -5,7 +5,6 @@ import TopBar from './components/TopBar';
 import BottomBar from './components/BottomBar';
 import Swipes from './components/Swipes'
 import axios from 'axios';
-import SwipeableImage from './components/SwipeableImage';
 
 
 export default function App() {
@@ -35,7 +34,7 @@ export default function App() {
     nextUser()
   }
   function nextUser() {
-    const nextIndex = users.length -2 === currentIndex ? 0 : currentIndex +1
+    let nextIndex = users.length -2 === currentIndex ? 0 : currentIndex +1
     setCurrentIndex(nextIndex)
   }
   function handleLikePress(){
@@ -62,8 +61,11 @@ export default function App() {
         }
         
       </View>
-      <BottomBar user={users[currentIndex]} handleLikePress={handleLikePress} handlePassPress={handlePassPress} />
-    </View>
+      {users[currentIndex]&& 
+      <BottomBar user={users[currentIndex]}   handleLikePress={handleLikePress} handlePassPress={handlePassPress} />
+      
+    }
+      </View>
     
   );
 }
