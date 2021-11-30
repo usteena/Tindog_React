@@ -15,11 +15,11 @@ export default function App() {
 
   async function fetchDogs(){
     try{
-      const {data} = await axios.get('https://randomuser.me/api/?gender=female&results=50')
+      const {data} = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=3902b24630c8e1f76575b003015fc068&language=en-US&results=50')
       setUsers(data.results);
     }catch (error){
       console.log(data.results);
-      Alert.alert('Error getting users','',[{text:'Retry', onPress:()=>fetchDogs()}])
+      Alert.alert('Error getting movies','',[{text:'Retry', onPress:()=>fetchDogs()}])
     }
   }
   
@@ -62,7 +62,7 @@ export default function App() {
         }
         
       </View>
-      <BottomBar handleLikePress={handleLikePress} handlePassPress={handlePassPress} />
+      <BottomBar user={users[currentIndex]} handleLikePress={handleLikePress} handlePassPress={handlePassPress} />
     </View>
     
   );

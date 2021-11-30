@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons'
 export default function SwipeableImage({ user, willLike, willPass }) {
     return (
         <View>
-            <Image source={{ uri: user.picture.large }} style={styles.photo} />
+            <Image source={{ uri: `https://image.tmdb.org/t/p/w500${user.poster_path}` }} style={styles.photo} />
             {willLike && (
                 <View style={styles.likeBox}>
                     <Text STYLE={{ ...styles.textPrimary, color: '#64EDCC' }}>LIKE</Text>
@@ -17,14 +17,14 @@ export default function SwipeableImage({ user, willLike, willPass }) {
             )}
             <View style={styles.textContainer}>
                 <View style={styles.textRow}>
-                    <Text style={[styles.textPrimary, styles.textShadow]}>{user.name.first}</Text>
-                    <Text style={[styles.textSecondary, styles.textShadow]}>{user.dob.age}</Text>
+                    <Text style={[styles.textPrimary, styles.textShadow]}>{user.original_title}</Text>
+                    <Text style={[styles.textSecondary, styles.textShadow]}>{user.overview}</Text>
 
                 </View>
                 <View style={styles.textRow}>
                     <FontAwesome name="map-marker" size={20} color="white"></FontAwesome>
 
-                    <Text style={[styles.textSecondary, styles.textShadow]}>{user.location.city}</Text>
+                    <Text style={[styles.textSecondary, styles.textShadow]}>{user.vote_average}</Text>
                 </View>
             </View>
         </View>
